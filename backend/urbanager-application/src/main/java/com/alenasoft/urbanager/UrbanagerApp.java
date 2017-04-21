@@ -4,7 +4,6 @@ import com.alenasoft.urbanager.api.Example;
 import com.alenasoft.urbanager.core.modules.HibernateModule;
 import com.alenasoft.urbanager.core.modules.MainModule;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.hubspot.dropwizard.guice.GuiceBundle;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.db.DataSourceFactory;
@@ -13,6 +12,7 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import io.swagger.jaxrs.config.BeanConfig;
 import io.swagger.jaxrs.listing.ApiListingResource;
+import ru.vyarus.dropwizard.guice.GuiceBundle;
 
 public class UrbanagerApp extends Application<UrbanagerConf> {
 
@@ -38,15 +38,10 @@ public class UrbanagerApp extends Application<UrbanagerConf> {
     bootstrap.addBundle(new AssetsBundle("/tools/swagger", "/swagger"));
     bootstrap.addBundle(hibernate);
 
-    GuiceBundle<UrbanagerConf> guiceBundle = GuiceBundle
-        .<UrbanagerConf>newBuilder()
-        .addModule(new MainModule())
-        .addModule(new HibernateModule(hibernate))
+    bootstrap.addBundle(GuiceBundle.builder()
         .enableAutoConfig(this.getClass().getPackage().getName())
-        .setConfigClass(UrbanagerConf.class)
-        .build();
-
-    bootstrap.addBundle(guiceBundle);
+        .modules(new MainModule(), new HibernateModule(hibernate))
+        .build());
   }
 
   @Override
@@ -58,7 +53,7 @@ public class UrbanagerApp extends Application<UrbanagerConf> {
     environment.jersey().register(new ApiListingResource());
     environment.getObjectMapper().setSerializationInclusion(JsonInclude.Include.NON_NULL);
     BeanConfig config = new BeanConfig();
-    config.setTitle("Madepa e-commerce application");
+    config.setTitle("Urbanization Manager REST Services");
     config.setVersion("0.0.1");
     config.setBasePath("/api");
     config.setResourcePackage(this.getClass().getPackage().getName());

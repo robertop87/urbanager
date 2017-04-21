@@ -14,7 +14,7 @@ import org.mockito.Mockito;
  * Unit test for Example Service Implementation.
  *
  * @author Luis Roberto Perez
- * @since 14-03-17
+ * @since 20-05-17
  */
 public class ExampleServiceImplTest {
 

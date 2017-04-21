@@ -15,7 +15,7 @@ import org.hibernate.annotations.Table;
  * Example POJO.
  *
  * @author Luis Roberto Perez
- * @since 14-03-17
+ * @since 20-05-17
  */
 @Entity
 @Table(appliesTo = "Example")

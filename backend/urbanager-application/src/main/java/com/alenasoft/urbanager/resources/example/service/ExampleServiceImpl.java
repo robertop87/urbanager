@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
  * A basic implementation of Example Service interface.
  *
  * @author Luis Roberto Perez
- * @since 14-03-17
+ * @since 20-05-17
  */
 public class ExampleServiceImpl implements ExampleService {
 

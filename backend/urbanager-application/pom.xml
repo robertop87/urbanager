@@ -13,7 +13,7 @@
   <name>Urbanager Server App</name>
 
   <properties>
-    <dropwizard.guice.version>1.0.6.0</dropwizard.guice.version>
+    <dropwizard-guicey-version>4.0.1</dropwizard-guicey-version>
     <h2.version>1.4.193</h2.version>
     <swagger.parser.version>1.0.28</swagger.parser.version>
   </properties>
@@ -33,9 +33,9 @@
     </dependency>
 
     <dependency>
-      <groupId>com.hubspot.dropwizard</groupId>
-      <artifactId>dropwizard-guice</artifactId>
-      <version>${dropwizard.guice.version}</version>
+      <groupId>ru.vyarus</groupId>
+      <artifactId>dropwizard-guicey</artifactId>
+      <version>${dropwizard-guicey-version}</version>
     </dependency>
 
     <dependency>

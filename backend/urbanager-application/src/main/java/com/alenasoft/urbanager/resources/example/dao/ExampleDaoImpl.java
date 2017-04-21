@@ -9,7 +9,7 @@ import org.hibernate.SessionFactory;
  * Implementation for ExampleDao.
  *
  * @author Luis Roberto Perez
- * @since 14-03-17
+ * @since 20-05-17
  */
 public class ExampleDaoImpl extends AbstractDAO<Example> implements ExampleDao {
 

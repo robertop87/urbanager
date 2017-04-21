@@ -17,7 +17,7 @@ database:
   password: 123
 
   # the JDBC URL
-  url: jdbc:h2:mem:onepayment
+  url: jdbc:h2:mem:urbanager
 
   # the maximum amount of time to wait on an empty pool before throwing an exception
   maxWaitForConnection: 1s

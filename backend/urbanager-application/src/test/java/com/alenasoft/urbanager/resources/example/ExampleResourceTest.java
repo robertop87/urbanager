@@ -22,7 +22,7 @@ import org.junit.Test;
  * Example to Integration test in UnitTest style for ExampleResource.
  *
  * @author Luis Roberto Perez
- * @since 14-03-17
+ * @since 20-05-17
  */
 public class ExampleResourceTest {
 

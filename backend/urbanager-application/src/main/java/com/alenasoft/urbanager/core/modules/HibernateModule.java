@@ -11,7 +11,7 @@ import io.dropwizard.hibernate.HibernateBundle;
  * Hibernate Module, injects any object with DAO dependency.
  *
  * @author Luis Roberto Perez
- * @since 14-03-17
+ * @since 20-05-17
  */
 public class HibernateModule extends AbstractModule {
 

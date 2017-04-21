@@ -23,7 +23,7 @@ import javax.ws.rs.core.Response;
  * This is a simple Example resource.
  *
  * @author Luis Roberto Perez
- * @since 14-03-17
+ * @since 20-05-17
  */
 @Path(ExampleResource.NAME)
 @Api(value = ExampleResource.NAME, description = "Simple example resource")
