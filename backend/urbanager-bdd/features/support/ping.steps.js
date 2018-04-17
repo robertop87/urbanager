@@ -5,6 +5,8 @@ const rp = require('request-promise')
 const HttpStatus = require('http-status')
 
 let httpResponseStatusCode = 0;
+let httpResponse;
+
 When('make a get request to /ping-fake resource', function () {
   let me = this;
   request.get("http://localhost:8080/ping-fake")
@@ -25,6 +27,7 @@ When('make a get request to /ping', async function () {
   await rp.get("http://localhost:8080/api/ping")
     .on('response', function(response) {
       if (response && response.statusCode) {
+        httpResponse = response;
         httpResponseStatusCode = response.statusCode;
       }
     })
@@ -36,4 +39,9 @@ When('make a get request to /ping', async function () {
 
 Then('the response is OK status', function () {
   expect(httpResponseStatusCode).to.eql(HttpStatus.OK);
+});
+
+Then('and response has a JSON with pong message', function () {
+  let message = JSON.parse(httpResponse.body).message;
+  expect(message).to.eql("pong");
 });
