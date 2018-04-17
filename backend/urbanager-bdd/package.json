@@ -12,5 +12,8 @@
     "urbanager"
   ],
   "author": "Luis Roberto Perez Rios",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cucumber": "^4.2.1"
+  }
 }
