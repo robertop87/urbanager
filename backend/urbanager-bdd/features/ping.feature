@@ -11,5 +11,7 @@ Feature: Check server status
    When make a get request to /ping
    Then the response is OK status
 
- 
- 
+  Scenario: Server send pong response
+   When make a get request to /ping
+   Then the response is OK status
+      And and response has a JSON with pong message
