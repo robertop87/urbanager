@@ -1,0 +1,16 @@
+{
+  "name": "urbanager-bdd",
+  "version": "1.0.0",
+  "description": "BDD test with cucumber for Urbanager",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "cucumber",
+    "bdd",
+    "urbanager"
+  ],
+  "author": "Luis Roberto Perez Rios",
+  "license": "ISC"
+}
