@@ -91,9 +91,9 @@ class BasicForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             Name:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+            <input name="nameInput" type="text" value={this.state.value} onChange={this.handleChange} />
           </label>
-          <input type="submit" value="Submit" />
+          <input name="submitButton" type="submit" value="Submit" />
         </form>
         <h1 name="h1Result" ref={this.h1Result}>Result here</h1>
       </div>
