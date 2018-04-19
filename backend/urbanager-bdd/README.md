@@ -1,6 +1,9 @@
 ## Installation
 `$ npm install`
 
+## Install chromedriver as global
+`$ npm install chromedriver --global`
+
 ## Run cucumber
 
 ### Linux

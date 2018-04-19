@@ -15,10 +15,12 @@
   "license": "ISC",
   "dependencies": {
     "chai": "^4.1.2",
+    "chromedriver": "^2.37.0",
     "cucumber": "^4.2.1",
     "http-status": "^1.0.1",
     "request": "^2.85.0",
     "request-promise": "^4.2.2",
-    "require": "^2.4.20"
+    "require": "^2.4.20",
+    "selenium-webdriver": "^4.0.0-alpha.1"
   }
 }
