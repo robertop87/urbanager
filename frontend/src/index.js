@@ -29,7 +29,7 @@ class Board extends React.Component {
 
     return (
       <div>
-        <div className="status">{status}</div>
+        <div className="status" name="statusDiv">{status}</div>
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
@@ -66,9 +66,48 @@ class Game extends React.Component {
   }
 }
 
+class BasicForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+    this.h1Result = React.createRef();
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    this.h1Result.current.innerText = this.state.value;
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Name:
+            <input type="text" value={this.state.value} onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+        <h1 name="h1Result" ref={this.h1Result}>Result here</h1>
+      </div>
+    );
+  }
+}
 // ========================================
 
 ReactDOM.render(
   <Game />,
   document.getElementById('root')
+);
+
+ReactDOM.render(
+  <BasicForm />,
+  document.getElementById('form')
 );
