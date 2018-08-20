@@ -1,0 +1,29 @@
+logging:
+  level: INFO
+  loggers:
+    com.srlpunto: DEBUG
+
+server:
+  rootPath: /api
+
+  applicationConnectors:
+    - type: http
+      port: 9090
+  adminConnectors:
+    - type: http
+      port: 9091
+
+database:
+  driverClass: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  #user: sa
+  #password: 123456
+  url: jdbc:sqlserver://localhost:1433;databaseName=ALSIE
+  properties:
+    hibernate.dialect: apidb.util.SQLServerDialect
+    hibernate.hbm2ddl.auto: none
+    hibernate.connection.useUnicode: true
+    hibernate.connection.charSet: UTF8
+    hibernate.generate_statistics: false
+    hibernate.show_sql: true
+    #hibernate.format_sql: true
+    hibernate.session.events.log: false
